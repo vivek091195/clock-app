@@ -10,7 +10,7 @@ const useTheme = () => {
   useEffect(() => {
     const localTheme = getItemFromLocalStorage(THEME_KEY);
     localTheme
-      ? setCurrentTheme(localTheme)
+      ? setCurrentTheme(localTheme.data.light)
       : setCurrentTheme(themes.data.light);
     setThemeLoaded(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps

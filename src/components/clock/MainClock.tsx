@@ -9,23 +9,32 @@ import {
   Quote,
   QuoteAuthor,
   RightSection,
+  TopClockDetails,
 } from "./MainClock.style";
 import { Button } from "../button/Button";
+import { useApp } from "../../useApp";
 
 const MainClock = () => {
+  const { getRandomQuoteAndAuthor, isMoreActive, toggleMoreButtonHandler } =
+    useApp();
+  const { quote, author } = getRandomQuoteAndAuthor();
   return (
     <ClockBackground>
-      <Quote></Quote>
-      <QuoteAuthor></QuoteAuthor>
+      <TopClockDetails>
+        <Quote>"{quote}"</Quote>
+        <QuoteAuthor>{author}</QuoteAuthor>
+      </TopClockDetails>
       <BottomClockDetails>
         <LeftSection>
-          <GreetingText></GreetingText>
-          <ClockDisplay></ClockDisplay>
-          <Place></Place>
+          <GreetingText>Good morning, it's currently</GreetingText>
+          <ClockDisplay>11:37</ClockDisplay>
+          <Place>In london, uk</Place>
         </LeftSection>
-        <RightSection>
-          <Button btnText="more" isMoreActive={true}></Button>
-        </RightSection>
+        <Button
+          btnText="more"
+          isMoreActive={isMoreActive}
+          onClick={toggleMoreButtonHandler}
+        ></Button>
       </BottomClockDetails>
     </ClockBackground>
   );
