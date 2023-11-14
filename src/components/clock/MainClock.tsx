@@ -3,16 +3,19 @@ import {
   BottomClockDetails,
   ClockBackground,
   ClockDisplay,
-  GreetingText,
+  Greeting,
   LeftSection,
   Place,
   Quote,
   QuoteAuthor,
-  RightSection,
+  TimeZone,
   TopClockDetails,
 } from "./MainClock.style";
 import { Button } from "../button/Button";
 import { useApp } from "../../useApp";
+import { getTimeInDisplayFormat } from "../../utils/dateTime";
+import { ReactComponent as IconSun } from "../../static/assets/icon-sun.svg";
+import { ReactComponent as IconMoon } from "../../static/assets/icon-moon.svg";
 
 const MainClock = () => {
   const { getRandomQuoteAndAuthor, isMoreActive, toggleMoreButtonHandler } =
@@ -26,8 +29,14 @@ const MainClock = () => {
       </TopClockDetails>
       <BottomClockDetails>
         <LeftSection>
-          <GreetingText>Good morning, it's currently</GreetingText>
-          <ClockDisplay>11:37</ClockDisplay>
+          <Greeting>
+            <IconSun />
+            <span>Good morning, it's currently</span>
+          </Greeting>
+          <ClockDisplay>
+            {getTimeInDisplayFormat()}
+            <TimeZone>IST</TimeZone>
+          </ClockDisplay>
           <Place>In london, uk</Place>
         </LeftSection>
         <Button

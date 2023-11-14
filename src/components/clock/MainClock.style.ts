@@ -38,10 +38,17 @@ const BottomClockDetails = styled.div`
 
 const LeftSection = styled.div``;
 
-const GreetingText = styled.p`
-  text-transform: uppercase;
-  font-size: ${FONT_SIZES.md};
-  color: ${({ theme }) => theme.colors.text};
+const Greeting = styled.p`
+  display: flex;
+  align-items: center;
+
+  > span {
+    text-transform: uppercase;
+    font-size: ${FONT_SIZES.sm3};
+    color: ${({ theme }) => theme.colors.text};
+    letter-spacing: 0.25rem;
+    margin-left: 1rem;
+  }
 `;
 
 const ClockDisplay = styled.p`
@@ -50,10 +57,17 @@ const ClockDisplay = styled.p`
   font-weight: 700;
 `;
 
+const TimeZone = styled.span`
+  font-size: ${FONT_SIZES.xl};
+  font-weight: normal;
+`;
+
 const Place = styled.p`
   font-size: ${FONT_SIZES.md};
   color: ${({ theme }) => theme.colors.text};
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 `;
 
 const RightSection = styled.div``;
@@ -65,8 +79,9 @@ export {
   QuoteAuthor,
   BottomClockDetails,
   LeftSection,
-  GreetingText,
+  Greeting,
   ClockDisplay,
+  TimeZone,
   Place,
   RightSection,
 };
