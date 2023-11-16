@@ -1,19 +1,18 @@
-import { ReactComponent as UpArrow } from "../../static/assets/icon-arrow-up.svg";
-import { ReactComponent as DownArrow } from "../../static/assets/icon-arrow-down.svg";
 import { ButtonWrapper, Text } from "./Button.style";
+import { ReactNode } from "react";
 
 interface Props {
-  isMoreActive: boolean;
   btnText: string;
+  btnIcon: ReactNode;
   onClick: () => void;
 }
 
 const Button = (props: Props) => {
-  const { btnText, isMoreActive, onClick } = props;
+  const { btnText, btnIcon, onClick } = props;
   return (
     <ButtonWrapper onClick={onClick}>
       <Text>{btnText}</Text>
-      {isMoreActive ? <UpArrow /> : <DownArrow />}
+      {btnIcon}
     </ButtonWrapper>
   );
 };

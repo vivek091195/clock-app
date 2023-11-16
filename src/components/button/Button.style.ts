@@ -21,6 +21,7 @@ const Text = styled.button`
   background-color: #fff;
   font-weight: 700;
   opacity: 0.5;
+  cursor: pointer;
 `;
 
 export { ButtonWrapper, Text };

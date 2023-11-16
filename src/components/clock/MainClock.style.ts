@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import backgroundDayTimeImage from "../../static/assets/desktop/bg-image-daytime.jpg";
-import backgroundNightTimeImage from "../../static/assets/desktop/bg-image-nighttime.jpg";
 import { FONT_SIZES } from "../../static/styles/typography";
 
 const ClockBackground = styled.div`
   width: 100%;
   min-height: 100vh;
   background-size: cover;
-  background-image: url(${backgroundDayTimeImage});
+  background-image: ${({ theme }) => `url(${theme.backgroundImage})`};
   padding: 3.5rem 10.5rem;
   display: flex;
   flex-direction: column;
@@ -16,11 +14,21 @@ const ClockBackground = styled.div`
 
 const TopClockDetails = styled.div``;
 
+const QuoteAndRefresh = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const IconWrapper = styled.div`
+  margin-left: 1rem;
+  cursor: pointer;
+`;
+
 const Quote = styled.p`
   font-size: ${FONT_SIZES.sm2};
   color: ${({ theme }) => theme.colors.text};
   line-height: 1.75rem;
-  width: 50%;
+  max-width: 40%;
 `;
 
 const QuoteAuthor = styled.p`
@@ -75,6 +83,8 @@ const RightSection = styled.div``;
 export {
   ClockBackground,
   TopClockDetails,
+  QuoteAndRefresh,
+  IconWrapper,
   Quote,
   QuoteAuthor,
   BottomClockDetails,
