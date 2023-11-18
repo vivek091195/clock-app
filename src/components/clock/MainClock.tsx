@@ -14,8 +14,6 @@ import {
 } from "./MainClock.style";
 import { Button } from "../button/Button";
 import { useApp } from "../../useApp";
-import { getTimeInDisplayFormat } from "../../utils/dateTime";
-import { useTheme } from "../../theme/useTheme";
 import { THEMES_ENUM } from "../../utils/constants";
 import { ReactComponent as IconSun } from "../../static/assets/icon-sun.svg";
 import { ReactComponent as IconMoon } from "../../static/assets/icon-moon.svg";
@@ -23,16 +21,24 @@ import { ReactComponent as IconRefresh } from "../../static/assets/icon-refresh.
 import { ReactComponent as UpArrow } from "../../static/assets/icon-arrow-up.svg";
 import { ReactComponent as DownArrow } from "../../static/assets/icon-arrow-down.svg";
 import { DetailsPanel } from "../details/DetailsPanel";
+import {
+  getCountryFromTimeZone,
+  getStateFromTimeZone,
+} from "../../utils/dateTime";
 
 const MainClock = () => {
-  const { currentTheme } = useTheme();
   const {
+    time,
     quote,
     author,
+    currentTheme,
     isMoreActive,
     toggleMoreButtonHandler,
     getRandomQuoteAndAuthor,
   } = useApp();
+
+  const timezoneState = getStateFromTimeZone();
+  const timezoneCountry = getCountryFromTimeZone();
   return (
     <ClockBackground>
       {isMoreActive ? (
@@ -58,14 +64,17 @@ const MainClock = () => {
             </span>
           </Greeting>
           <ClockDisplay>
-            {getTimeInDisplayFormat()}
+            {time}
             <TimeZone>IST</TimeZone>
           </ClockDisplay>
-          <Place>In london, uk</Place>
+          <Place>
+            In {timezoneState}
+            {timezoneCountry ? "," : ""} {timezoneCountry}
+          </Place>
         </LeftSection>
         <Button
-          btnText={isMoreActive ? "more" : "less"}
-          btnIcon={isMoreActive ? <UpArrow /> : <DownArrow />}
+          btnText={isMoreActive ? "less" : "more"}
+          btnIcon={isMoreActive ? <DownArrow /> : <UpArrow />}
           onClick={toggleMoreButtonHandler}
         ></Button>
       </BottomClockDetails>

@@ -1,4 +1,10 @@
 import {
+  getCurrentTimezone,
+  getDayOfTheWeek,
+  getDayOfYear,
+  getWeekOfYear,
+} from "../../utils/dateTime";
+import {
   DetailBox,
   DetailHeader,
   DetailPanel,
@@ -13,22 +19,22 @@ const DetailsPanel = () => {
       <DetailPanel>
         <DetailBox>
           <DetailHeader>current timezone</DetailHeader>
-          <DetailValue>europe/london</DetailValue>
+          <DetailValue>{getCurrentTimezone()}</DetailValue>
         </DetailBox>
         <DetailBox>
           <DetailHeader>day of the year</DetailHeader>
-          <DetailValue>295</DetailValue>
+          <DetailValue>{getDayOfYear()}</DetailValue>
         </DetailBox>
         <DividerLine></DividerLine>
       </DetailPanel>
       <DetailPanel>
         <DetailBox>
           <DetailHeader>day of the week</DetailHeader>
-          <DetailValue>5</DetailValue>
+          <DetailValue>{getDayOfTheWeek()}</DetailValue>
         </DetailBox>
         <DetailBox>
           <DetailHeader>week number</DetailHeader>
-          <DetailValue>42</DetailValue>
+          <DetailValue>{getWeekOfYear()}</DetailValue>
         </DetailBox>
       </DetailPanel>
     </PanelWrapper>
