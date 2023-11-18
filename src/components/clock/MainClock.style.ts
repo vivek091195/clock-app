@@ -21,7 +21,7 @@ const ClockBackground = styled.div`
   ${mobile(css`
     background-image: ${({ theme }) =>
       `url(${theme.device.mobile.backgroundImage})`};
-    padding-top: 2rem;
+    padding: 2rem 0;
     position: fixed;
     overflow: hidden;
   `)};
@@ -93,7 +93,7 @@ const BottomClockDetails = styled.div`
     flex-direction: column;
     margin: unset;
     margin-left: 1.6rem;
-    margin-top: 6rem;
+    margin-top: 3rem;
     align-items: flex-start;
   `)};
 `;
