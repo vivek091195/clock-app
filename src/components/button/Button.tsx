@@ -1,4 +1,4 @@
-import { ButtonWrapper, Text } from "./Button.style";
+import { ButtonWrapper, IconWrapper, Text } from "./Button.style";
 import { ReactNode } from "react";
 
 interface Props {
@@ -12,7 +12,7 @@ const Button = (props: Props) => {
   return (
     <ButtonWrapper onClick={onClick}>
       <Text>{btnText}</Text>
-      {btnIcon}
+      <IconWrapper>{btnIcon}</IconWrapper>
     </ButtonWrapper>
   );
 };

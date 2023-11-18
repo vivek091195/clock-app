@@ -1,14 +1,28 @@
-import backgroundDayTimeImage from "../static/assets/desktop/bg-image-daytime.jpg";
-import backgroundNightTimeImage from "../static/assets/desktop/bg-image-nighttime.jpg";
 import { COLORS } from "../static/styles/colors";
 import { THEMES_ENUM } from "../utils/constants";
+import desktopDayImage from "../static/assets/desktop/bg-image-daytime.jpg";
+import desktopNightImage from "../static/assets/desktop/bg-image-nighttime.jpg";
+import tabletDayImage from "../static/assets/tablet/bg-image-daytime.jpg";
+import tabletNightImage from "../static/assets/tablet/bg-image-nighttime.jpg";
+import mobileDayImage from "../static/assets/mobile/bg-image-daytime.jpg";
+import mobileNightImage from "../static/assets/mobile/bg-image-nighttime.jpg";
 
 export const THEME_SCHEMA = {
   data: {
     [THEMES_ENUM.LIGHT]: {
       id: "T_001",
       name: THEMES_ENUM.LIGHT,
-      backgroundImage: backgroundDayTimeImage,
+      device: {
+        desktop: {
+          backgroundImage: desktopDayImage,
+        },
+        tablet: {
+          backgroundImage: tabletDayImage,
+        },
+        mobile: {
+          backgroundImage: mobileDayImage,
+        },
+      },
       colors: {
         text: `${COLORS.WHITE}`,
         button: {
@@ -27,7 +41,17 @@ export const THEME_SCHEMA = {
     [THEMES_ENUM.DARK]: {
       id: "T_002",
       name: THEMES_ENUM.DARK,
-      backgroundImage: backgroundNightTimeImage,
+      device: {
+        desktop: {
+          backgroundImage: desktopNightImage,
+        },
+        tablet: {
+          backgroundImage: tabletNightImage,
+        },
+        mobile: {
+          backgroundImage: mobileNightImage,
+        },
+      },
       colors: {
         text: `${COLORS.WHITE}`,
         button: {
