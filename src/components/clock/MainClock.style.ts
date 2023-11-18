@@ -6,13 +6,15 @@ const ClockBackground = styled.div`
   min-height: 100vh;
   background-size: cover;
   background-image: ${({ theme }) => `url(${theme.backgroundImage})`};
-  padding: 3.5rem 10.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 3.5rem;
 `;
 
-const TopClockDetails = styled.div``;
+const TopClockDetails = styled.div`
+  margin: 0 10.5rem;
+`;
 
 const QuoteAndRefresh = styled.div`
   display: flex;
@@ -42,6 +44,7 @@ const BottomClockDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin: 0 10.5rem 6rem;
 `;
 
 const LeftSection = styled.div``;

@@ -1,5 +1,6 @@
 import backgroundDayTimeImage from "../static/assets/desktop/bg-image-daytime.jpg";
 import backgroundNightTimeImage from "../static/assets/desktop/bg-image-nighttime.jpg";
+import { COLORS } from "../static/styles/colors";
 import { THEMES_ENUM } from "../utils/constants";
 
 export const THEME_SCHEMA = {
@@ -9,10 +10,17 @@ export const THEME_SCHEMA = {
       name: THEMES_ENUM.LIGHT,
       backgroundImage: backgroundDayTimeImage,
       colors: {
-        text: "#FFFFFF",
+        text: `${COLORS.WHITE}`,
         button: {
-          text: "#303030",
-          background: "#FFFFFF",
+          text: `${COLORS.DARK_GRAY}`,
+          background: `${COLORS.WHITE}`,
+        },
+        panel: {
+          background: "rgba(255, 255, 255, 0.75)",
+          text: `${COLORS.DARK_GRAY}`,
+        },
+        divider: {
+          background: `${COLORS.DARK_GRAY}`,
         },
       },
     },
@@ -21,10 +29,17 @@ export const THEME_SCHEMA = {
       name: THEMES_ENUM.DARK,
       backgroundImage: backgroundNightTimeImage,
       colors: {
-        text: "#FFFFFF",
+        text: `${COLORS.WHITE}`,
         button: {
-          text: "#303030",
-          background: "#FFFFFF",
+          text: `${COLORS.DARK_GRAY}`,
+          background: `${COLORS.WHITE}`,
+        },
+        panel: {
+          background: "rgba(0, 0, 0, 0.75)",
+          text: `${COLORS.WHITE}`,
+        },
+        divider: {
+          background: `${COLORS.WHITE}`,
         },
       },
     },

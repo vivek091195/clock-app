@@ -22,6 +22,7 @@ import { ReactComponent as IconMoon } from "../../static/assets/icon-moon.svg";
 import { ReactComponent as IconRefresh } from "../../static/assets/icon-refresh.svg";
 import { ReactComponent as UpArrow } from "../../static/assets/icon-arrow-up.svg";
 import { ReactComponent as DownArrow } from "../../static/assets/icon-arrow-down.svg";
+import { DetailsPanel } from "../details/DetailsPanel";
 
 const MainClock = () => {
   const { currentTheme } = useTheme();
@@ -34,15 +35,19 @@ const MainClock = () => {
   } = useApp();
   return (
     <ClockBackground>
-      <TopClockDetails>
-        <QuoteAndRefresh>
-          <Quote>"{quote}"</Quote>
-          <IconWrapper onClick={getRandomQuoteAndAuthor}>
-            <IconRefresh />
-          </IconWrapper>
-        </QuoteAndRefresh>
-        <QuoteAuthor>{author}</QuoteAuthor>
-      </TopClockDetails>
+      {isMoreActive ? (
+        <DetailsPanel />
+      ) : (
+        <TopClockDetails>
+          <QuoteAndRefresh>
+            <Quote>"{quote}"</Quote>
+            <IconWrapper onClick={getRandomQuoteAndAuthor}>
+              <IconRefresh />
+            </IconWrapper>
+          </QuoteAndRefresh>
+          <QuoteAuthor>{author}</QuoteAuthor>
+        </TopClockDetails>
+      )}
       <BottomClockDetails>
         <LeftSection>
           <Greeting>
