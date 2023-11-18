@@ -21,7 +21,7 @@ const ButtonWrapper = styled.button`
   `)};
 
   ${mobile(css`
-    margin: 3rem 0 2.5rem;
+    margin: 3rem 0 4.5rem;
     width: 115px;
     height: 40px;
   `)};
@@ -36,6 +36,7 @@ const Text = styled.button`
   font-weight: 700;
   opacity: 0.5;
   cursor: pointer;
+  margin-left: 6px;
 
   ${tablet(css`
     font-size: ${FONT_SIZES.sm};
@@ -43,7 +44,6 @@ const Text = styled.button`
 
   ${mobile(css`
     font-size: 0.75rem;
-    margin-left: 6px;
   `)};
 `;
 

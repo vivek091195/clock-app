@@ -19,7 +19,7 @@ const PanelWrapper = styled.div`
   `)};
 
   ${mobile(css`
-    height: 35%;
+    height: 45%;
     padding: 3rem 1.62rem 0;
     flex-direction: column;
     justify-content: revert;

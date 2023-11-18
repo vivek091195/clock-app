@@ -22,6 +22,8 @@ const ClockBackground = styled.div`
     background-image: ${({ theme }) =>
       `url(${theme.device.mobile.backgroundImage})`};
     padding-top: 2rem;
+    position: fixed;
+    overflow: hidden;
   `)};
 `;
 
