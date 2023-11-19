@@ -25,6 +25,9 @@ export const THEME_SCHEMA = {
       },
       colors: {
         text: `${COLORS.WHITE}`,
+        quote: {
+          text: `${COLORS.BLACK}`,
+        },
         button: {
           text: `${COLORS.DARK_GRAY}`,
           background: `${COLORS.WHITE}`,
@@ -54,6 +57,9 @@ export const THEME_SCHEMA = {
       },
       colors: {
         text: `${COLORS.WHITE}`,
+        quote: {
+          text: `${COLORS.WHITE}`,
+        },
         button: {
           text: `${COLORS.DARK_GRAY}`,
           background: `${COLORS.WHITE}`,

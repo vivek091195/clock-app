@@ -53,7 +53,7 @@ const IconWrapper = styled.div`
 
 const Quote = styled.p`
   font-size: ${FONT_SIZES.sm2};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.quote.text};
   line-height: 1.75rem;
   max-width: 40%;
 
@@ -70,7 +70,7 @@ const Quote = styled.p`
 
 const QuoteAuthor = styled.p`
   font-size: ${FONT_SIZES.sm2};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.quote.text};
   font-weight: 500;
   margin-top: 1rem;
 `;

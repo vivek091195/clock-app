@@ -57,10 +57,15 @@ const MainClock = () => {
       <BottomClockDetails>
         <LeftSection>
           <Greeting>
-            {currentTheme === THEMES_ENUM.LIGHT ? <IconSun /> : <IconMoon />}
+            {currentTheme?.name === THEMES_ENUM.LIGHT ? (
+              <IconSun />
+            ) : (
+              <IconMoon />
+            )}
             <span>
-              Good {currentTheme === THEMES_ENUM.LIGHT ? "morning" : "evening"},
-              it's currently
+              Good{" "}
+              {currentTheme?.name === THEMES_ENUM.LIGHT ? "morning" : "evening"}
+              , it's currently
             </span>
           </Greeting>
           <ClockDisplay>
